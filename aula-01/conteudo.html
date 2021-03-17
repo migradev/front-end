@@ -1,0 +1,77 @@
+<!-- 
+    HTML (HyperText Markup Language ou Linguagem de Marcação de HiperTexto) é o bloco de construção mais básico 
+    da web. Ele define a estrutura do conteúdo do site, utilizando tags. As tags representam elementos do site,
+    como links, botões, parágrafos e etc, são elas que formam as instruções de como o navegador deve montar o site 
+    para o usuário.
+
+    Estrutura básica de uma tag:
+
+    <nomedatag>conteúdo</nomedatag>
+
+    Algumas tags possuem atributos, obrigatórios e/ou opcionais, 
+    que ajudam a definir o conteúdo dela.
+
+    <nomedatag atributo="valor">conteúdo</nomedatag>
+    
+    Por exemplo para fazer um link (tag <a>), é obrigatório especificar o 
+    destino dele usando o atributo 'href':
+
+    <a href="https://www.google.com">Ir para o Google</a>
+-->
+
+
+<!--
+    Estrutura basica do HTML:
+
+    <html> -> Elemento raiz, definine onde começa e termina o código
+        <head> -> Contêm os metadados da página, ou seja os dados sobre os dados que são exibidos no site, por exemplo o título da página 
+
+        </head>
+        <body> -> Onde o conteúdo do site é definido, ou seja aquilo que o usuário vê.
+
+        </body>
+    </html>
+-->
+
+<html>
+
+<head>
+    <!-- Define o título da página (o mesmo nome que aparece na aba do navegador) -->
+    <title>Aula 01</title>
+
+    <!-- Define o estilo da página, ou seja o CSS -->
+    <style>
+
+        /* 
+            CSS (Cascading Style Sheets ou Folhas de Estilo em Cascata) é uma linguagem de estilo 
+            usada para descrever a apresentação de um documento escrito em HTML. É o CSS que define as instruções 
+            para o navegador de como os elementos devem ser estilizados na página. Ele faz isso selecionando os 
+            elementos e descrevendo as propriedades de estilo que devem ser alteradas nele, como no exemplo abaixo:
+        */
+
+        /* seletor: especifica para quais elementos da página deve ser aplicado o estilo entre as chaves, nesse caso para todos os botões (tag button) */
+        button {
+            /* 
+                propriedade: especifica como uma das propriedades de estilo do elemento deve ser alterada, no caso abaixo 
+                a cor de fundo do elemento (background-color) dever ser alterada para vermelho (red) 
+            */
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cria um cabeçalho (titulo). O 'h' seria de header (cabeçalho em inglês), o 1 especifica o tamanho, que vai de 1 ao 6, 1 sendo o maior e 6 o menor -->
+    <h1>Cabeçalho</h1>
+
+    <!-- Cria um parágrafo. O 'p' sendo de paragraph (parágrafo em inglês) -->
+    <p>parágrafo</p>
+
+    <!-- Cria um link, o valor no atributo 'href' especifica o destino do link e o conteúdo entre as tags o que será exibido ao usuário. O 'a' seria de anchor (âncora em inglês) -->
+    <a href="https://www.google.com">link</a>
+
+    <!-- Cria um botão com o estilo padrão do navegador, que assim como o das outras tags pode ser sobrescrevido pelo seu CSS -->
+    <button>Botão</button>
+</body>
+
+</html>
