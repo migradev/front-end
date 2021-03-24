@@ -1,0 +1,214 @@
+<html>
+
+<head>
+    <title>Aula 02</title>
+    <style>
+        /*
+            O CSS altera o estilo de um ou mais elementos usando seletores. 
+            Os 3 tipos principais são: classe, id e o nome da tag.
+        */
+
+        /*
+            Seletores de classe começam com um ponto antes do nome. Ele  
+            aplica o estilo entre as chaves para todos os elementos usando a classe, 
+            bom para compartilhar estilo entre diferentes elementos. 
+        */
+        .btn {
+            color: white;
+        }
+
+        /*
+            Seletores de id começam com uma hashtag antes do nome. Aplicam o estilo apenas 
+            para o elemento com o id em questão, o atributo id é o identificador único 
+            do elemento, apesar de dois elementos poderem ter o mesmo id sem causar 
+            um erro na página, fazer isso não é recomendado, pois o atributo perde seu propósito.
+        */
+        #botao-com-id {
+            background-color: black;
+        }
+
+        /*
+            Seletores de tag são declarados apenas escrevendo o nome da tag. Aplicam o estilo 
+            para todos os elementos feitos com a tag em questão. Bom para criar um estilo 
+            padrão no site para uma determinada tag.          
+        */
+        button {
+            background-color: lightblue;
+        }
+
+        .fundo-vermelho {
+            background-color: red;
+        }
+
+        .titulo {
+            /*
+                Para declarar cores no CSS existem varias formas, mas 3 delas são as principais:
+            */
+
+            /*
+                Nomes pré-definidos da cor em inglês. Esse é menos usado por ser um tanto 
+                limitado, existem apenas 140 cores definidas. 
+                Lista completa: https://www.w3schools.com/colors/colors_names.asp
+            */
+            background-color: white;
+
+
+            /*
+                O rgb() especifica a cor usando a combinação de vermelho (r), verde (g) e azul (b), 
+                indo de 0 (sem cor) a 255 (cor completa). No exemplo abaixo a cor esta sendo 
+                formada por 0 vermelho e azul e 255 verde, formando uma cor 100% verde:
+            */
+                
+            color: rgb(0, 255, 0); /* rgb(vermelho, verde, azul) */
+        }
+
+
+        .descricao {
+            /*
+                O hexadecimal é um codigo que assim como o rgb() representa 
+                a combinação de vermelho, verde e azul da cor, onde a 
+                cada dois caracteres uma cor é representada: 
+                    
+                # 00 (vermelho) 00 (verde) 00 (azul)
+                
+                Usando valores que vão de 00 (sem cor) a ff (cor completa), 
+                seguindo a ordem: 0123456789abcdef.
+
+                No exemplo abaixo roxo foi criado usando "77" vermelho, "ff" azul e deixando o verde ausente (00):
+            */
+            color: #7700ff;
+
+            /*
+                O hexadecimal também pode ser declarado em apenas 3 caracteres se o 
+                restante deles desejado for ser igual aos 3 primeiros, por exemplo para formar 
+                branco usamos #ffffff, que pode ser encurtado para #fff: 
+            */
+            background-color: #fff; 
+        }
+
+
+        h1 {
+            /*
+                O "font-size" Altera o tamanho da fonte de um texto, aceita unidades de medida do CSS como 
+                valor (vamos falar sobre as outras futuramente), abaixo pixels (px) estão sendo 
+                utilizados para determinar o tamanho da fonte, ou seja ele diz quantos pixels da 
+                tela do usuário devem ser ocupados pelo texto.
+            */
+            font-size: 20px;
+
+
+            /*
+                A "margin" altera o espaçamento externo do elemento, ou seja entre ele e outros elementos, 
+                funciona como se ele estivesse empurrando os outros. Aceita unidades de medida do CSS como 
+                valor, e recebe 4 valores separados por espaço: cima direita baixo esquerda
+            */
+            margin: 10px 5px 10px 5px;
+
+            /*
+                Caso o valor de cima e baixo, e direita e esqueda sejam os mesmos respectivamente, 
+                pode se usar uma versão mais curta de 2 valores: cima/baixo direita/esquerda
+            */
+            margin: 10px 5px;
+
+
+            /* Ou se o mesmo valor deve ser aplicado para todos os lados: */
+            margin: 10px;
+
+            /* 
+                Caso apenas um valor especifico precise ser mudado uma outra forma seria 
+                utilizar as propriedades especificas para cada lado: 
+            */
+
+            /* cima */
+            margin-top: 10px;
+
+            /* direita */
+            margin-right: 10px;
+
+            /* baixo */
+            margin-bottom: 10px;
+
+            /* esquerda */
+            margin-left: 10px;
+
+
+            /*
+                O "padding" altera o espaçamento interno dos elementos, ou seja o quanto de espaço 
+                apartir do centro deve ser feito. Aceita os mesmos valores que o "margin" e também 
+                tem suas mesmas variações:
+            */
+
+            padding: 20px;
+
+            padding: 20px 20px;
+
+            padding-left: 20px;
+        }
+
+        .botao-com-borda {
+            /*
+                O "border" cria uma borda envolta do elemento. Aceita 3 valores 
+                separados por espaço: 
+
+                grossura (unidades de medida) estilo (nomes pré-definidos) cor (qualquer forma de declarar cor)
+            */
+            border: 5px solid #0077ff;
+        }
+
+        /* Outros estilos de bordas: */
+
+        .com-borda-pontilhada {
+            /*
+                O 'border-style' altera apenas o estilo da borda
+            */
+            border-style: dotted;
+        }
+
+        .com-borda-tracejada {
+            border-style: dashed;
+        }
+
+        .com-borda-dupla {
+            border-style: double;
+        }
+
+        /* Lista completa: https://www.w3schools.com/css/css_border.asp */
+
+        .botão-arredondado {
+            /*
+                O border radius altera o raio da borda (arredondamento) 
+                do elemento. Aceita unidades de medida como valor.
+            */
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="titulo">Titulo</h1>
+    <h2 class="descricao">descricao</h1>
+
+
+    <button class="btn">Botão com classe</button>
+
+    <!--
+        Um elemento pode ter mais de uma classe e será afetado pelo estilo das duas, 
+        isso é muito utilizado para reaproveitar o CSS, no exemplo abaixo o objetivo 
+        era criar um botão no estilo do site, mas com um fundo vermelho, então a classe 
+        btn e fundo-vermelho foram combinadas para criar o resultado esperado:
+    -->
+    <button class="btn fundo-vermelho">Botão com duas classe</button>
+
+    <button id="botao-com-id">Botão selecionado por id</button>
+    <button>Botão afetado por ser da tag button</button>
+
+    <button class="btn botao-com-borda">botão com borda solida</button>
+    <button class="btn botao-com-borda com-borda-pontilhada">botão com borda pontilhada</button>
+    <button class="btn botao-com-borda com-borda-tracejada">botão com borda tracejada</button>
+    <button class="btn botao-com-borda com-borda-dupla">botão com borda dupla</button>
+
+    <button class="btn botao-com-borda com-borda-dupla botão-arredondado">botão arredondado com borda dupla</button>
+
+</body>
+
+</html>
