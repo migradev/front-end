@@ -1,0 +1,128 @@
+<!DOCTYPE html> <!--Informa para o navagador 
+    que se trata de um documento HMTL, não é 100% obrigatório, 
+    o navegador irá carregar o documento mesmo que ele não esteja presente, 
+    mas muitos navegadores irão usar metodos legados para renderizar o HTML, 
+    para usar os padrões mais recentes sempre adicione o <!DOCTYPE html>. -->
+
+<html>
+    <title>botão</title>
+    
+    <style>
+        .botao {
+            color: white;
+            background-color:  #FA4A0C;
+            border-radius: 30px;
+            font-size: 24px;
+
+            border: #FA4A0C;  /* Com o "border-style: none" abaixo, essa propriedade não 
+                está surtindo efeito, pois a borda sem estilo e o mesmo que sem borda. */
+         
+            border-style: none; /* A palavra-chave "none" faz com que uma propriedade seja removida 
+                do estilo de um elemento, existem outras propriedades que também aceitam esse valor, 
+                como o: text-decoration, box-shadow, float, list-style, entre outras. */
+            
+            /* Nesse caso, em que a tag "a" estava sendo usada, não era necessário remover a borda, 
+            pois o estilo padrão dela não possui borda. */
+
+            text-decoration: none; /* O "text-decoration" adiciona uma decoração ao texto, 
+                ele tem 3 tipos: sublinhado (underline), riscado (line-through) e  
+                sublinhado reverso (overline). Você pode combinar os 3 separando os 
+                valores com um espaço:  
+                    text-decoration: underline line-through overline;    
+                
+                Nesse caso o "text-decoration: none" foi nescessário pois a tag "a" possui 
+                "text-decoration: underline" em seu estilo padrão. 
+            */
+
+            width: 236px; /*
+                O "width" altera a largura de um elemento, ele aceita 
+                unidades de medida como valor, nesse caso pixels estão sendo usados.
+
+                Junto com ele tem o "height" que funciona da mesma forma mas altera a 
+                altura do elemento.
+            */
+
+            display: block; /*
+                O 'display' é a propriedade que altera com um elemento deve ser exibido e como 
+                ele é alterado pelo width, height e padding:
+
+                - block = Deve ocupar todo um bloco da página, ou seja 100% da 
+                linha onde ele se encontra, outros elementos não podem ficar ao 
+                lado dele, mesmo que tenha espaço em pixels suficiente;
+
+                - inline = Deve ocupar apenas a largura do seu conteúdo, outros 
+                elementos podem ficar ao lado dele, porém ele não é afetado por width e height
+                e o padding não tem efeito para cima e para baixo, apenas direita e esquerda.
+                Esse é o display padrão da tag "a" por isso foi nescessário mudar para "block", 
+                para poder especificar a largura do botão;
+
+                - inline-block = Outros elementos podem ficar ao lado dele e assim como o block 
+                é afetado por width, height e todos os lados do padding.
+            */
+
+
+            text-align: center; /* 
+                O 'text-align' define o alinhamento do texto, entre: centralizado (center),
+                esquerda (left), direita (right) e justificado (justify). Ele foi usado em 
+                conjunto como o padding abaixo para centralizar o texto dentro da caixa do botão, 
+                já que o "text-align: center" centraliza o texto apenas na horizontal, o 
+                padding abaixo está criando um espaçamento interno a partir do centro do botão de 16 
+                pixels para cima e para baixo, o que surti o efeito de colocar o texto no meio 
+                do botão, se o "height" tivesse sido usado o botão iria expandir a partir do topo 
+                e não do centro, fazendo com que o texto não ficasse alinhado verticalmente. 
+            */
+
+            padding: 16px 0px;
+
+            
+            font-family: Arial, Helvetica, sans-serif; /* O 'font-family'
+                define a familia da fonte. Aceita uma lista de nomes de fonte 
+                separados por virgula que serão a ordem de prioridade, 
+                caso a primeira fonte não seja encontrada ele usa a segunda 
+                e assim por diante, a ultima geralmente sendo um tipo genérico como:
+
+                - sans-serif: Qualquer fonte disponível que não tenha serifa (https://pt.wikipedia.org/wiki/Serifa);
+                - serif: Qualquer fonte disponível que tenha serifa;
+
+                Outros tipos: https://www.w3schools.com/css/css_font.asp
+
+                Para um fonte estar disponível ela deve ser 
+                uma das fornecidas pelos navegadores, como essas: https://www.w3schools.com/cssref/css_websafe_fonts.asp
+                ou deve estar sendo importada no seu projeto (veremos futuramente como fazer isso).
+            */
+
+
+            font-weight: bold; /*
+                O "font-weight" determina a grossura da fonte, ele aceita 
+                um valor de 100 a 900 ou valores pré-definidos como: lighter, normal, 
+                bold e bolder. Sendo o bold negrito e o bolder uma versão mais forte dele, 
+                e o lighter uma versão mais fraca da letra normal, mas nen todas as fontes tem 
+                versões diferentes para todos esses valores, a maioria delas tem apenas normal e 
+                bold. Ao selecionar um valor que a fonte não tem ela cai automaticamente para o 
+                valor mais próximo, por exemplo bolder iria para bold, e se o bold não estiver 
+                disponível, para o normal.
+            */
+        }
+
+    </style>
+
+    <body>
+        <a class= "botao" href="https://play.google.com/store?hl=pt_BR&gl=US">Playstore</a> <!--
+            A tag "a" foi escolhida aqui pois apesar de visualmente o elemento ser um botão, ele 
+            se comporta como um link. 
+            
+            No HTML existem varias formas de chegar no mesmo resultado, então é importante se atentar ao conteúdo que 
+            o elemento irá abrigar na hora de escolher a tag, isso se chama HTML semântico, isso quer dizer que as tags 
+            usadas no seu código HMTL representam o tipo de conteúdo que elas abrigam, isso não é apenas uma boa prática, 
+            fazer o HTML dessa forma tem duas grandes vantagens: 
+            
+            O código fica mais simples e facil de fazer e prestar manutenção, pois as tags estão sendo usadas para o seu propósito correto, 
+            abaixo por exemplo, o link poderia ter sido feito também com uma tag "button" + JS, mas isso seria mais complexo e demoraria mais, 
+            para fazer algo que a tag "a" já faz por você; 
+            
+            Com o HTML semântico é mais facil para mecanismos de pesquisa (Google) entenderem o seu site, isso faz com 
+            que ele apareça mais alto nas listas de pesquisa, aumentando as chances de um usuário cair no seu site a partir do 
+            Google por exemplo. -->
+    </body>   
+
+</html>
