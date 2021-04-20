@@ -1,0 +1,146 @@
+.titulo {
+    color: white;
+}
+
+.descricao {
+    color: gray;
+}
+
+.fundo {
+    /* 
+        Define o tamanho do elemento em uma porcentagem relativa ao tamanho do pai, por exemplo 
+        se o pai tiver 500px de largura e o elemento filho estiver com o width: 50% ele ficará com 250px
+        de largura. Nesse caso o elemento pai é a própria página, pois o único pai da div com a classe "fundo" 
+        é o próprio body, dessa forma o 100% será da página
+    */
+    width: 100%;
+
+    height: 500px;
+    padding: 10px;
+    margin-bottom: 25px;
+
+    /* Define a cor do fundo, aceita valores de cor como: palavras-chave (red), hexadecimal, rgb e etc  */
+    background-color: lightblue;
+
+    /* 
+        Define uma imagem de fundo para o elemento, é usado em conjunto com a palavra-chave url() para 
+        especificar o caminho da imagem. No final do caminho deve ter o nome do arquivo com sua extensão
+        e o caminho deve ser relativo ao arquivo que contém o CSS em questão, ou seja como esse arquivo
+        (style.css) está dentro de uma pasta e a imagem em outra primeiro é precisa declarar no caminho 
+        que ele deve começar a partir da pasta anterior na hierarquia usando o: "../", caso haja mais pastas
+        basta adicionar mais, por exemplo se o arquivo estivesse no caminho styles/paginas/home/style.css e 
+        a imagem no caminho images/home/fundo.jpg a url ficaria assim ../../../images/home/fundo.jpg
+    */
+    background-image: url("../images/fundo.jpg");
+
+    /* 
+        Define se a imagem de fundo deve repetir e como, aceita palavras-chave como valor, as principais são: 
+        
+        repeat = deve repetir
+        repeat-x = deve repetir na horizontal
+        repeat-y = deve repetir na vertical
+        no-repeat = sem repetição
+    */
+    background-repeat: repeat;
+
+    /* 
+        Define o que deve ser feito quando o conteúdo for grande demais para caber no elemento, 
+        pode receber um dos 4 valores:
+
+        visible = Valor padrão, o conteúdo excedente fica visível e transborda para fora do elemento
+        hidden = Esconde o conteúdo excedente o cortando onde o elemento acaba 
+        scroll = Esconde o conteúdo excedente, mas adiciona uma barra de rolagem ao elemento
+        auto = Igual ao scroll, mas so adiciona barra de rolagem quando necessário
+
+        O overflow pode ser especificado individualmente para horizontal e vertical respectivamente 
+        ou apenas um valor para os dois:
+    */
+    overflow: scroll scroll;
+
+    /* ou */
+
+    overflow: scroll;
+    
+    /*
+        Define o tamanho da imagem de fundo, aceita palavras-chaves como valor ou o tamanho específico em 
+        unidades de medida
+
+        auto = Valor padrão, deixa a imagem no tamanho original
+        cover = Redimensiona a imagem para cobrir todo o espaço
+        contain = Redimensiona a imagem para que ela fique 100% visível
+        largura altura = Valores de medida que definem uma tamanho específico, por exemplo: 200px 50px  
+    */
+    background-size: auto;
+
+    /*
+        Define a posição da imagem de fundo, aceita dois valores separados por espaço para 
+        definir a posição horizontal e vertical respectivamente, ou apenas um valor para os dois.
+        Aceita as seguintes palavras-chave para definir as posições:
+
+        left = esquerda
+        right = direita
+        center = centro
+        top = em cima
+        bottom = em baixo
+    */
+    background-position: left;
+
+    /* ou */
+
+    background-position: left top;
+}
+
+/* 
+    Define a imagem de fundo deve se comportar em relação ao rolamento da página ou elemento, "local" irá fazer o fundo rolar junto com o 
+    rolamento interno do elemento, "fixed" irá fazer o elemento ficar fixo em relação ao rolamento da página, criando um efeito chamado 
+    parallax, que é quando uma imagem fica parada enquanto outra por cima dela se move dando a impressão de que ela está atrás da outra 
+    em um plano distante. Para ver um site usando parallax de uma olhada aqui: https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm
+*/
+.fundo-com-scroll-local {
+    background-attachment: local;
+}
+
+.fundo-com-scroll-fixo {
+    background-attachment: fixed;
+}
+
+.fundo-repetindo-na-horizontal {
+    background-repeat: repeat-x;
+}
+
+.fundo-repetindo-na-vertical {
+    background-repeat: repeat-y;
+}
+
+.fundo-sem-repeticao {
+    background-repeat: no-repeat;
+}
+
+.fundo-com-tamanho-especifico {
+    background-size: 200px 50px;
+}
+
+.fundo-cobrindo-todo-o-espaco {
+    background-size: cover;
+}
+
+.fundo-redimensionado-para-mostrar-tudo {
+    background-size: contain;
+}
+
+/**/
+.imagem {
+    display: block;
+}
+
+.imagem-cobrindo-sem-manter-proporção {
+    object-fit: fill;
+}
+
+.imagem-cobrindo-mantendo-a-proporção {
+    object-fit: cover;
+}
+
+.imagem-sem-redimensionamento {
+    object-fit: none;
+}
