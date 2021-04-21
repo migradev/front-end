@@ -158,11 +158,30 @@
     </div>
 
     <!--
-        Cria uma imagem 
+        Insere uma imagem na página usando os seguintes atributos:
+    
+        src = Link da imagem, pode ser um link externo ou um caminho para a imagem dentro do projeto. Esse 
+        atributo é obrigatório e deve ser passado o caminho com a nome e a extensão da imagem, exp.: /imagem.png
+
+        alt = Texto alternativa para caso a imagem não seja encontrada, não é obrigatório, mas é altamente 
+        recomendado preenchê-lo com uma descrição do que seria a imagem para que o usuário não fique perdido
+
+        width/height = Altura e largura da imagem, não é obrigatório, mas é também é muito recomendado, pois
+        com o width e height definidos o navegador sabe qual o espaço que a imagem vai utilizar então ele reserva 
+        esse espaço enquanto a imagem carrega, caso contrário, para imagens pesadas ou hospedadas em um servidor 
+        lento, o layout do site iria estar quebrado até a imagem carregar 
     -->
     <img src="images/penguins.png" class="imagem" alt="Penguins" width="400px" height="300px" />
 
     <img src="https://deelay.me/5000/https://picsum.photos/200/300" alt="Aleatória" width="200px" height="300px" />
+
+    <img src="images/penguins.png" class="imagem imagem-cobrindo-sem-manter-proporção " alt="Penguins" width="200px" height="200px" />
+
+    <img src="images/penguins.png" class="imagem imagem-cobrindo-mantendo-a-proporção" alt="Penguins" width="200px" height="200px" />
+
+    <img src="images/penguins.png" class="imagem imagem-cobrindo-mantendo-a-proporção-sem-cortar" alt="Penguins" width="200px" height="200px" />
+
+    <img src="images/penguins.png" class="imagem imagem-sem-redimensionamento" alt="Penguins" width="200px" height="200px" />
     
     <h2>Texto depois da imagem</h2>
 </body>

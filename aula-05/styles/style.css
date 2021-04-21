@@ -36,10 +36,10 @@
     /* 
         Define se a imagem de fundo deve repetir e como, aceita palavras-chave como valor, as principais são: 
         
-        repeat = deve repetir
-        repeat-x = deve repetir na horizontal
-        repeat-y = deve repetir na vertical
-        no-repeat = sem repetição
+        repeat = Deve repetir
+        repeat-x = Deve repetir na horizontal
+        repeat-y = Deve repetir na vertical
+        no-repeat = Sem repetição
     */
     background-repeat: repeat;
 
@@ -77,11 +77,11 @@
         definir a posição horizontal e vertical respectivamente, ou apenas um valor para os dois.
         Aceita as seguintes palavras-chave para definir as posições:
 
-        left = esquerda
-        right = direita
-        center = centro
-        top = em cima
-        bottom = em baixo
+        left = Esquerda
+        right = Direita
+        center = Centro
+        top = Em cima
+        bottom = Em baixo
     */
     background-position: left;
 
@@ -128,17 +128,31 @@
     background-size: contain;
 }
 
-/**/
 .imagem {
     display: block;
 }
 
 .imagem-cobrindo-sem-manter-proporção {
+    /*
+        Específica como uma imagem ou vídeo deve ser redimensionado 
+        para caber no seu contêiner, aceita as seguintes palavras-chave 
+        como valor:
+
+        fill = Valor padrão, redimensiona a imagem para caber no container ignorando a proporção original
+        cover = Redimensiona a imagem mantendo a proporção original e corta a imagem caso necessário
+        contain = Redimensiona a imagem mantendo a proporção original e diminui a imagem caso necessário
+        none = Não redimensiona a imagem
+
+    */
     object-fit: fill;
 }
 
 .imagem-cobrindo-mantendo-a-proporção {
     object-fit: cover;
+}
+
+.imagem-cobrindo-mantendo-a-proporção-sem-cortar {
+    object-fit: contain;
 }
 
 .imagem-sem-redimensionamento {
