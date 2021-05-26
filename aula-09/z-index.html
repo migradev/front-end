@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aula 09 - Z-Index</title>
+
+    <style>
+        body {
+            color: white;
+        }
+
+        div {
+            padding: 10px;
+        }
+
+        .container-um {
+            display: inline-block;
+            position: relative;
+            background-color: royalblue;
+            height: 200px;
+            width: 200px;
+            z-index: 1;
+        }
+
+        .filho {
+            position: relative;
+            left: 70px;
+            background-color: orangered;
+            height: 107px;
+            width: 111px;
+            z-index: 100;
+        }
+
+        .container-dois {
+            display: inline-block;
+            position: relative;
+            background-color: darkgreen;
+            height: 200px;
+            width: 200px;
+            left: -40px;
+            top: 40px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-um">
+        <p>Pai</p>
+        z-index: 1
+        <div class="filho">
+            <p>Filho</p>
+            z-index: 100 
+        </div>
+    </div>
+
+    <div class="container-dois">
+        <p>Elemento externo</p>
+        z-index: 2
+    </div>
+</body>
+
+</html>

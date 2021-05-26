@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aula 09</title>
+
+    <style>
+
+        div {
+            padding: 10px;
+        }
+
+        .pai {
+            margin: 10px;
+            background-color: blue ;
+            font-size: 15px;
+            height: 2000px;
+
+            /*
+                position: define como o elemento deve 
+                ser posicionado
+
+                padrão, segue o fluxo do documento 
+                também chamado de não posicionado
+            */
+            position: static;
+        }
+
+        .filho-zero {
+            background-color: green;
+            position: relative;
+
+            height: 1000px;
+        }
+
+        .filho-um {
+            background-color: purple;
+            
+            /*
+                funciona como a static a não ser que tenha
+                left, top, bottom ou right setado, caso tenha
+                remove o elemento do fluxo do documento
+                para a posição indicada
+            */
+            position: relative;
+            left: 10px;
+            top: 5px;
+
+            /* funciona em elementos posicionados, 
+            relative, absolute, fixed, sticky e flex*/
+            z-index: 1;
+        }
+
+        .filho-dois {            
+            background-color: orange;
+
+
+            /*
+                remove o elemento do fluxo 
+                do documento por completo,
+                o resto dos elementos são rendenizados
+                como se ele não estivesse lá
+
+            */
+            position: absolute;
+
+
+            /*
+                absolute posiciona o 
+                elemento absolutamente 
+                dentro de um pai que tenha position: relative
+                , caso nenhum tenha o pai sera a propria pagina
+                , diferente do relative 
+                que posiciona um elemento relativamente 
+                a posição atual dele
+            */
+            top: 0px
+
+        }
+
+        .filho-tres {
+            background-color: red;
+
+            /*
+                igual ao absolute, porem 
+                posiciona o elemento 
+                fixo em relação a pagina
+                fazendo com que ele continue 
+                no mesmo lugar mesmo apos 
+                rolar a pagina 
+            */
+            position: fixed;
+            top: 10px;
+            right: 50px;
+
+            /* 
+                controla a ordem dos elementos 
+                na tela no eixo z, quem fica na frente de quem,
+                
+                pode ser qualquer numero, incluse negativo 
+                
+                0 e não setado é a mesma coisa
+                caso 2 elementos tenha o mesmo z-index 
+                ele respeita a ordem no html
+            */
+            z-index: 1;
+        }
+        
+        .filho-quatro {
+            background-color: grey;
+        
+            position: relative;
+        }
+
+        /* verifica suporte no navegador */
+        @supports (position: sticky) {
+
+            /* 
+                se comporta 
+                como static ate 
+                o rolamento da pagina fizer 
+                com que ele fico proximo 
+                da posiçao indicada, nesse 
+                momento ele se torna fixed relativo ao pai   
+            */
+
+            .filho-quatro {
+                position: sticky;
+                top: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="pai">
+        Pai
+        <div class="filho-zero">
+            Zero
+            <div class="filho-um">Um</div>
+            <div class="filho-dois">Dois</div>
+            <div class="filho-tres">Três <a href="z-index.html">(z-index)</a></div>
+            <div class="filho-quatro">Quatro <a href="sticky.html">(sticky)</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
